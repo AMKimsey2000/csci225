@@ -1,1 +1,1 @@
-# CSCI 225 Repo. - Adam Kimsey
+# Test site - Adam Kimsey
