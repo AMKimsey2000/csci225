@@ -1,7 +1,78 @@
-<!DOCTYPE html>
 <html>
+    <head>
+        <title>CSCI 225 Homepage of Adam K.</title>
+        <h1>CSCI 225 Homepage of Adam Kimsey</h1>
+        <div class = "navbar">
+            <ul>
+                <li><a href = "https://www.usca.edu/">Link to the USCA main page</a></li>
+                <li><a href = "#assignments">Assignments</a></li>
+                <li><a href = "#contact">Contact information</a></li>
+                <li><a href = "https://www.w3schools.com/TAGS/default.ASP">HTML tag reference (just in case you need it later)</a></li>
+                <li><a href = "img/stick_bug.mp4">Stick bug?</a></li>
+            </ul>
+        </div>
+    </head>
     <body>
-        <h1>Some random heading</h1>
-        <p>Test</p>
+        <div class = "introduction">
+            <h1>Introduction</h1>
+            <p>Hi, my name is Adam Kimsey, and I'm currently a sophomore here at USC Aiken. I am majoring in computer science with no concentration with a minor in mathematics<br>
+                as science and math are my two favorite subjects. I enjoy programming for fun on occasion and playing games on my computer quite frequently, but outside of that, <br>
+                there isn't much else that I enjoy doing. I am hoping to get a good paying job after finishing my degree here and hope to move somewhere that I enjoy as I don't<br>
+                plan on moving around a lot at that point.</p>
+            <h3>I also really like space!</h3>
+            <img src = "img/space.jpg"></img>
+        </div>
+        <div class = "assignment">
+            <h1 id = "assignments">Assignments</h1>
+            <ol>
+                <li>Assignment 1 - Due 09/14/2020<ul>
+                    <li><a href = "doc/Assignment1.pdf">Assignment sheet</a></li>
+                </ul></li>
+            </ol>
+        </div>
+        <div class = "portfolio">
+            <h1>Portfolio</h1>
+            <p>Previous/notable projects of mine:</p>
+            <ul>
+                <li>Basic Java adventure game for CSCI 145<ul>
+                    <li>Helped bug test and create some GUI functions like buttons and screen elements</li>
+                </ul></li>
+                <li>Visual Basic program for school student management for CSCI 185<ul>
+                    <li>Wrote a whole portion of the program and created some functions/method for common features and fixed issues with others' code</li>
+                </ul></li>
+            </ul>
+        </div>
+        <div class = "schedule">
+            <h1>Schedule</h1>
+            <table border = "1">
+                <tr>
+                    <th colspan = 5>Current course schedule</th>
+                </tr>
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+                <tr>
+                    <td>CSCI 225  12:00 - 1:15</td>
+                    <td>HIST 201  9:25 - 10:40<br>CSCI 146  12:15 - 1:30</td>
+                    <td>CSCI 225  12:00 - 1:15<br>CSCI 146  3:00 - 5:30</td>
+                    <td>CSCI 146  12:15 - 1:30</td>
+                    <td>Nothing</td>
+                </tr>
+            </table>
+        </div>
+        <p id = "contact"><b>Contact Information</b></p>
+        <address>
+            Page written 100% by Adam Kimsey<br>If anything is broken, send me an <a href = "mailto:amkimsey@usca.edu">e-mail</a>
+        </address>
+        <footer>
+            <p>Copyright &copy; Adam Kimsey 2020<br>Last updated: 09/13/2020</p>
+            <label for = "bar">Website completion: </label>
+            <progress id ="bar" value = "5" max = "100"></progress>
+            <p><small><sub>This text is really small</sub></small></p>
+        </footer>
     </body>
 </html>
