@@ -1,2 +1,2 @@
-# Test Site - Adam Kimsey
-Not much here right now other than some basic HTML...
+# CSCI 225 - Adam Kimsey
+This is my page for CSCI 225 that will be updated over the course of the semester
