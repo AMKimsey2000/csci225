@@ -24,8 +24,8 @@
                 <option value = "NPR">NPR (National Public Radio)</option>
                 <option value = "Other">Other/Not listed here</option>
             </select></label><br>
-            <label>Please rate this website on a scale of 1 to 10: <b>1</b><input type = "range" id = "rating" name = "rating" min = "1" max = "10" oninput = "actualRating.value = parseInt(rating.value)"><b>10</b>
-            <i><output name = "actualRating">6</output></i></label><br> <!--The 6 is just the default value-->
+            <label>Please rate this website on a scale of 1 to 10: <b>1</b><input type = "range" id = "rating" name = "rating" min = "1" max = "10" oninput = "actualRating.value = parseInt(rating.value)"><b>10</b></label>
+            <i><output name = "actualRating">6</output></i><br> <!--The 6 is just the default value-->
             <label><b>Any additional comments or questions about the website:<br><textarea name = "comment" cols = "50" rows = "4"></textarea></b></label><br>
             <input type = "submit" name = "submitButton" value = "Submit feedback"><br>
             <audio src = "../data/bababooey.mp3" id = "snd"></audio>
