@@ -1,0 +1,142 @@
+table {
+    border: 2px solid #ffffff;
+    padding: 3px;
+    empty-cells: hide;
+}
+td {
+    padding: 6px;
+    border-top: 1px solid #ffffff;
+    line-height: 1.25;
+    vertical-align: text-top;
+}
+p, li, h1, h2, h3, h4, address, label, table {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #ffffff;
+}
+div.introduction p {
+    line-height: 1.5;
+    text-align: center;
+}
+p {
+    font-weight: 400;
+}
+li {
+    font-weight: 600;
+}
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 7px 4px 3px #22149c;
+}
+a {
+    text-decoration: none;
+    color: #3835e2;
+    transition: 0.33s linear;
+}
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+div.navbar a:hover {
+    font-size: 20px;
+    background-color: #3e339ea9;
+    text-decoration: none;
+}
+body {
+    background-image: url(../img/space.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img#blackH {
+    width: 10%;
+    height: 10%;
+    float: right;
+    transition: 10s linear;
+}
+img#blackH:hover {
+    transform: rotate(3turn);
+    filter: hue-rotate(3turn);
+}
+li {
+    list-style-type: none;
+}
+div.navbar ul {
+    display: grid;
+    grid: 50px / repeat(5, 1fr);
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+div.navbar a, h1 {
+    display: inline;
+    background-color: #1a116d85;
+    border-radius: 20px;
+    padding: 5px;
+}
+h1 {
+    transition: 0.5s linear;
+}
+h1:hover {
+    transform: scale(1.25);
+    background-color: #ffffff85;
+    color: #3835e2;
+    text-shadow: 7px 4px 3px #00000080;
+}
+footer {
+    background: linear-gradient(#4635e277, #ffffff00);
+    position: fixed;
+    width: 100%;
+}
+div.introduction p::first-letter, div.pie p::first-letter {
+    text-shadow: 7px 4px 3px #22149c;
+    font-size: 170%;
+}
+div.navbar a#special {
+    transition: 0.75s linear;
+}
+div.navbar a#special:hover {
+    filter: hue-rotate(-1turn);
+}
+div.portfolio li, address, footer p {
+    line-height: 1.5;
+}
+div.portfolio, div.schedule, div.pie {
+    display: none;
+    position: absolute;
+    top: 525px;
+    left: 300px;
+}
+h2#port:hover + div, h2#schedule:hover + div, h2#pi:hover + div {
+    display: block;
+}
+div.assignment {
+    margin-bottom: 200px;
+    border-bottom: 2px solid #ffffff6c;
+}
+h2#port {
+    position: absolute;
+    top: 520px;
+    left: 100px;
+}
+h2#schedule {
+    position: absolute;
+    top: 570px;
+    left: 100px;
+}
+h2#pi {
+    position: absolute;
+    top: 620px;
+    left: 100px;
+}
+div.contactInfo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 2px solid #ffffff6c;
+}
+div.portfolio {
+    box-shadow: 4px 8px 7px #2b1ac585;
+}
+tr:nth-child(odd) {
+    background-color: #ffffff96;
+    color: #22149c;
+}

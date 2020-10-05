@@ -2,28 +2,18 @@
 <html lang = "en">
     <head>
         <title>CSCI 225 Homepage of Adam K.</title>
-        <style>
-            table {
-                border: 2px solid #000000;
-                padding: 3px;
-            }
-            td {
-                padding: 6px;
-                border-top: 1px solid #000000;
-                line-height: 1.25;
-                vertical-align: text-top;
-            }
-        </style>
+        <link href = "css/home.css" rel = "stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap" rel="stylesheet">
     </head>
     <body>
         <h1>CSCI 225 Homepage of Adam Kimsey</h1>
         <div class = "navbar">
             <ul>
                 <li><a href = "https://www.usca.edu/">Link to the USCA main page</a></li>
-                <li><a href = "#assignments">Assignments</a></li>
+                <li><a href = "https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML Reference</a></li>
+                <li><a href = "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#Keyword_index">CSS reference</a></li>
                 <li><a href = "#contact">Contact information</a></li>
-                <li><a href = "https://www.w3schools.com/TAGS/default.ASP">HTML tag reference (just in case you need it later)</a></li>
-                <li><a href = "img/stick_bug.mp4">Stick bug?</a></li>
+                <li><a id = "special" href = "img/stick_bug.mp4">Stick bug?</a></li>
             </ul>
         </div>
         <div class = "introduction">
@@ -31,12 +21,12 @@
             <p>Hi, my name is Adam Kimsey, and I'm currently a sophomore here at USC Aiken. I am majoring in computer science with no concentration with a minor in mathematics<br>
                 as science and math are my two favorite subjects. I enjoy programming for fun on occasion and playing games on my computer quite frequently, but outside of that, <br>
                 there isn't much else that I enjoy doing. I am hoping to get a good paying job after finishing my degree here and hope to move somewhere that I enjoy as I don't<br>
-                plan on moving around a lot at that point.</p>
-            <h3>I also really like space!</h3>
-            <img src = "img/space.jpg" alt = "A really cool picture of space that probably isn't loading">
+                plan on moving around a lot at that point. I also really enjoy space, though I don't know if I would want to go up into space. I also enjoy swimming in my pool<br>
+                in my backyard from time to time, but I still prefer the beach over the pool, but I suppose it's good enough.</p>
+            <img id = "blackH" src = "img/blackhole.png" alt = "A really cool picture of a black hole that probably isn't loading">
         </div>
         <div class = "assignment">
-            <h1 id = "assignments">Assignments</h1>
+            <h1>Assignments</h1>
             <h4>If you find any problems with anything, you can contact me using <a href = "doc/ContactMe.html">this link</a>. Or, you can look up my information
             at the bottom of the page.</h4>
             <ol>
@@ -48,8 +38,8 @@
                 </ul></li>
             </ol>
         </div>
+        <h2 id = "port">Portfolio</h2>
         <div class = "portfolio">
-            <h1>Portfolio</h1>
             <p>Previous/notable projects of mine:</p>
             <ul>
                 <li>Basic Java adventure game for CSCI 145<ul>
@@ -60,8 +50,8 @@
                 </ul></li>
             </ul>
         </div>
+        <h2 id = "schedule">Schedule</h2>
         <div class = "schedule">
-            <h1>Schedule</h1>
             <table>
                 <tr>
                     <th colspan = 5>Current course schedule</th>
@@ -78,17 +68,30 @@
                     <td>HIST 202  9:25 - 10:40<br>CSCI 146  12:15 - 1:30</td>
                     <td>CSCI 225  12:00 - 1:15<br>CSCI 146  3:00 - 5:30</td>
                     <td>CSCI 146  12:15 - 1:30</td>
-                    <td>Nothing</td>
+                    <td></td>
                 </tr>
             </table>
         </div>
-        <p id = "contact"><b>Contact Information</b></p>
-        <address>
-            Page written 100% by Adam Kimsey<br>If anything is broken, send me an <a href = "mailto:amkimsey@usca.edu">e-mail</a>
-        </address>
-        <footer>
-            <p>Copyright &copy; Adam Kimsey 2020<br>Last updated: 09/21/2020</p>
-            <label>Website completion: <progress id ="bar" value = "12" max = "100"></progress></label>
-        </footer>
+        <h2 id = "pi">Pi</h2>
+        <div class = "pie">
+            <p>3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128
+                481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273
+                724587006606315588174881520920962829254091715364367892590360011330530548820466521384146951941511609433057270365759591953092186117381932611793105118548
+                074462379962749567351885752724891227938183011949129833673362440656643086021394946395224737190702179860943702770539217176293176752384674818467669405132
+                000568127145263560827785771342757789609173637178721468440901224953430146549585371050792279689258923542019956112129021960864034418159813629774771309960
+                518707211349999998372978049951059731732816096318595024459455346908302642522308253344685035261931188171010003137838752886587533208381420617177669147303
+                5982534904287554687311595628638823537875937519577818577805321712268066130019278766111959092164201989<br>(Yes, this is 1,000 digits long)
+            </p>
+        </div>
+        <div class = "contactInfo">
+            <p id = "contact"><b>Contact Information</b></p>
+            <address>
+                Page written 100% by Adam Kimsey<br>If anything is broken, send me an <a href = "mailto:amkimsey@usca.edu">e-mail</a>
+            </address>
+        </div>
     </body>
+    <footer>
+        <p>Copyright &copy; Adam Kimsey 2020<br>Last updated: 10/05/2020</p>
+        <label>Website completion: <progress id ="bar" value = "33" max = "100"></progress></label>
+    </footer>
 </html>
