@@ -2,37 +2,75 @@
 <html lang = "en">
     <head>
         <title>Website feedback</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     </head>
     <body>
-        <a href = ../index.html>Back to main page</a>
-        <h1>Website feedback form</h1>
-        <p>Fill out this form with the required information, and I'll get back to you whenever I receive the feedback.</p>
-        <h4>* = Required</h4>
-        <form name = "feedback">
-            <label>* First name: <input type = "text" placeholder = "Anonymous" name = "fname" required size = "12"></label>
-            <label>* Last name: <input type = "text" placeholder = "Anonymous" name = "lname" required size = "12"></label><br>
-            <label>* E-mail: <input type = "email" placeholder = "name@domain.com" name = "mail" size = "25" required></label><br>
-            <label>Would you recommend this site to anyone else?: <input type = "radio" id = "y" name = "recommend" value = "y" checked>Yes</label>
-            <label><input type = "radio" id = "n" name = "recommend" value = "n">No</label><br>
-            <label>Out of curiosity, which of these websites is your favorite?:<br><select name = "favWebsite">
-                <option value = "Facebook">Facebook</option>
-                <option value = "Twitter">Twitter</option>
-                <option value = "Google">Google</option>
-                <option value = "Reddit">Reddit</option>
-                <option value = "DeviantArt">DeviantArt</option>
-                <option value = "MSN">MSN (Microsoft Network)</option>
-                <option value = "NPR">NPR (National Public Radio)</option>
-                <option value = "Other">Other/Not listed here</option>
-            </select></label><br>
-            <label>Please rate this website on a scale of 1 to 10: <b>1</b><input type = "range" id = "rating" name = "rating" min = "1" max = "10" oninput = "actualRating.value = parseInt(rating.value)"><b>10</b></label>
-            <i><output name = "actualRating">6</output></i><br> <!--The 6 is just the default value-->
-            <label><b>Any additional comments or questions about the website:<br><textarea name = "comment" cols = "50" rows = "4"></textarea></b></label><br>
-            <input type = "submit" name = "submitButton" value = "Submit feedback"><br>
-            <audio src = "../data/bababooey.mp3" id = "snd"></audio>
-            <button type = "button" name = "randomButton" onclick = "var sound = document.getElementById('snd'); sound.play();">Defunct button?</button>
+        <nav class = "navbar navbar-expand sticky-top navbar-dark bg-dark">
+            <a class = "navbar-brand font-weight-bold" href = "#">Navigation Bar</a>
+            <div class = "collapse navbar-collapse">
+                <div class = "navbar-nav">
+                    <a class = "nav-item nav-link active" href = "../index.html">Back to main page</a>
+                    <a class = "nav-item nav-link active" href = "https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML elements reference</a>
+                    <a class = "nav-item nav-link active" href = "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#Keyword_index">CSS reference</a>
+                    <a class = "nav-item nav-link disabled">Broken</a>
+                </div>
+            </div>
+        </nav>
+        <div class = "alert alert-danger font-weight-bold" role = "alert">
+            THIS WEBSITE IS NOT DONE AT ALL, DON'T TREAT IT AS SUCH.
+        </div>
+        <video width = "640" height = "360" controls src = ../img/rickroll.mp4 class = "rounded-lg m-2" style = "float: right;"></video><br>
+        <h1 class = "p-2">Website feedback form</h1>
+        <p class = "p-2">Fill out this form with the required information, and I'll get back to you whenever I receive the feedback.</p>
+        <h4 class = "m-2 font-weight-bold">* = Required</h4>
+        <form name = "feedback" class = "p-2">
+            <div class = "form-group">
+                <label class = "font-italic">* First name <input type = "text" placeholder = "Anonymous" name = "fname" required size = "12" class = "form-control"></label>
+                <label class = "font-italic">* Last name <input type = "text" placeholder = "Anonymous" name = "lname" required size = "12" class = "form-control"></label><br>
+                <label class = "font-italic">* E-mail <input type = "email" placeholder = "name@domain.com" name = "mail" size = "25" required class = "form-control"></label>
+                <small id = "emailHelpText" class = "form-text text-muted">I won't share your e-mail or other personal information with anyone else.</small><br>
+                <p class = "font-weight-light">Would you recommend this website to anyone else?</p>
+            </div>
+            <div class = "form-check form-check-inline">
+                <input class = "form-check-input" type = "radio" name = "YorN" id = "y" value = "yes" checked>
+                <label class = "form-check-label font-weight-light pr-2" for = "y">
+                    Yes
+                </label>
+                <input class = "form-check-input" type = "radio" name = "YorN" id = "n" value = "no">
+                <label class = "form-check-label font-weight-light pr-2" for = "y">
+                    No
+                </label>
+                <input class = "form-check-input" type = "radio" name = "YorN" id = "d" value = "disabled" disabled>
+                <label class = "form-check-label font-weight-light" for = "y">
+                    This option doesn't work
+                </label>
+            </div>
+            <div class = "form-group">
+                <label class = "font-weight-light">Out of curiosity, which of these websites is your favorite?<br><select name = "favWebsite" class = "form-control">
+                    <option value = "Facebook">Facebook</option>
+                    <option value = "Twitter">Twitter</option>
+                    <option value = "Google">Google</option>
+                    <option value = "Reddit">Reddit</option>
+                    <option value = "DeviantArt">DeviantArt</option>
+                    <option value = "MSN">MSN (Microsoft Network)</option>
+                    <option value = "NPR">NPR (National Public Radio)</option>
+                    <option value = "Other">Other/Not listed here</option>
+                </select></label><br>
+                <label class = "font-weight-light">Please rate this website on a scale of 1 to 10 <input type = "range" id = "rating" name = "rating" min = "1" max = "10" oninput = "actualRating.value = parseInt(rating.value)" class = "form-control-range"></label>
+                <i><output name = "actualRating">6</output></i><br> <!--The 6 is just the default value-->
+            </div>
+            <div class = "form-group">
+                <label><b>Any additional comments or questions about the website:<br><textarea name = "comment" cols = "50" rows = "4" class = "form-control" placeholder = "Comments go here"></textarea></b></label><br>
+                <input type = "submit" name = "submitButton" value = "Submit feedback" class = "btn btn-primary"><br>
+                <audio src = "../data/bababooey.mp3" id = "snd"></audio>
+                <button type = "button" name = "randomButton" onclick = "var sound = document.getElementById('snd'); sound.play();" class = "btn btn-danger">Defunct button?</button>
+            </div>
         </form>
-        <h2>Random video:</h2>
-        <video width = "640" height = "360" controls src = ../img/rickroll.mp4></video>
-        <p><sub>Please don't hate me</sub></p>
+        <div class = "spinner-border text-primary" role = "status">
+        </div>
+        <p>It loads forever</p>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </body>
 </html>
