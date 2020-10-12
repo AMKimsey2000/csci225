@@ -103,7 +103,7 @@ div.portfolio li, address, footer p {
 div.portfolio, div.schedule, div.pie {
     display: none;
     position: absolute;
-    top: 550px;
+    top: 575px;
     left: 300px;
 }
 h2#port:hover + div, h2#schedule:hover + div, h2#pi:hover + div {
@@ -115,17 +115,17 @@ div.assignment {
 }
 h2#port {
     position: absolute;
-    top: 550px;
+    top: 575px;
     left: 100px;
 }
 h2#schedule {
     position: absolute;
-    top: 600px;
+    top: 625px;
     left: 100px;
 }
 h2#pi {
     position: absolute;
-    top: 650px;
+    top: 675px;
     left: 100px;
 }
 div.contactInfo {
