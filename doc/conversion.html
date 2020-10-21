@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "utf-8">
+        <title>Basic Unit Converter</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <a class = "m-1" href = "../index.html">Back to main page</a>
+        <div class = "alert alert-primary">
+            This is very barebones, so don't expect much.
+        </div>
+        <h2 class = "ml-2"><b>Very</b> basic unit converter</h2>
+        <div class = "form-group ml-4">
+            <input id = "input1" type = "text" class = "form-control" style = "width: 20%; display: inline" placeholder = "A number">
+            <select id = "unit1" class = "form-control" style = "display: inline; width: 10%;">
+                <option>Foot</option>
+                <option>Inch</option>
+                <option>Yard</option>
+                <option>Meter</option>
+                <option>Kilometer</option>
+                <option>Centimeter</option>
+            </select>
+            <h1 style = "display: inline; position: relative; left: 25px;"> -> </h1>
+            <input disabled id = "input2" type = "text" class = "form-control" style = "width: 20%; display: inline; position: relative; left: 50px;" placeholder = "Output will show here">
+            <select id = "unit2" style = "position: relative; left: 50px; width: 10%; display: inline;" class = "form-control">
+                <option>Foot</option>
+                <option>Inch</option>
+                <option>Yard</option>
+                <option>Meter</option>
+                <option>Kilometer</option>
+                <option>Centimeter</option>
+            </select>
+        </div>
+        <button type = "button" class = "btn btn-primary" style = "position: relative; left: 610px;" id = "convertBtn">Convert</button>
+        <script>
+            function calc() {
+                var in1 = $("#input1");
+                var u1 = $("#unit1").prop("selectedIndex");
+                var in2 = $("#input2");
+                var u2 = $("#unit2").prop("selectedIndex");
+                if (u1 == u2) {
+                    in2.val(isNaN(parseFloat(in1.val())) ? "Error" : parseFloat(in1.val()));
+                } else {
+                    var convFactor = 0.0;
+                    switch (u1) {
+                        case 0:
+                            switch (u2) {
+                                case 1:
+                                    convFactor = 12.0;
+                                    break;
+                                case 2:
+                                    convFactor = 1.0/3.0;
+                                    break;
+                                case 3:
+                                    convFactor = 1.0/3.281;
+                                    break;
+                                case 4:
+                                    convFactor = 1.0/3281.0;
+                                    break;
+                                case 5:
+                                    convFactor = 30.48;
+                                    break;
+                            }
+                            break;
+                        case 1:
+                            switch (u2) {
+                                case 0:
+                                    convFactor = 1.0/12.0;
+                                    break;
+                                case 2:
+                                    convFactor = 1.0/36.0;
+                                    break;
+                                case 3:
+                                    convFactor = 1.0/39.37;
+                                    break;
+                                case 4:
+                                    convFactor = 1.0/39370.0;
+                                    break;
+                                case 5:
+                                    convFactor = 2.54;
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch (u2) {
+                                case 0:
+                                    convFactor = 3.0;
+                                    break;
+                                case 1:
+                                    convFactor = 36.0;
+                                    break;
+                                case 3:
+                                    convFactor = 1.0/1.094;
+                                    break;
+                                case 4:
+                                    convFactor = 1.0/1094.0;
+                                    break;
+                                case 5:
+                                    convFactor = 91.44;
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            switch (u2) {
+                                case 0:
+                                    convFactor = 3.281;
+                                    break;
+                                case 1:
+                                    convFactor = 39.37;
+                                    break;
+                                case 2:
+                                    convFactor = 1.094;
+                                    break;
+                                case 4:
+                                    convFactor = 1.0/1000.0;
+                                    break;
+                                case 5:
+                                    convFactor = 100.0;
+                                    break;
+                            }
+                            break;
+                        case 4:
+                            switch (u2) {
+                                case 0:
+                                    convFactor = 3281.0;
+                                    break;
+                                case 1:
+                                    convFactor = 39370.0;
+                                    break;
+                                case 2:
+                                    convFactor = 1094.0;
+                                    break;
+                                case 3:
+                                    convFactor = 1000.0;
+                                    break;
+                                case 5:
+                                    convFactor = 100000.0;
+                                    break;
+                            }
+                            break;
+                        case 5:
+                            switch (u2) {
+                                case 0:
+                                    convFactor = 1.0/30.48;
+                                    break;
+                                case 1:
+                                    convFactor = 1.0/2.54;
+                                    break;
+                                case 2:
+                                    convFactor = 1.0/91.44;
+                                    break;
+                                case 3:
+                                    convFactor = 1.0/100.0;
+                                    break;
+                                case 4:
+                                    convFactor = 1.0/100000.0;
+                                    break;
+                            }
+                            break;
+                    }
+                    in2.val(isNaN(parseFloat(in1.val())) ? "Error" : parseFloat(in1.val()) * convFactor);
+                }
+            }
+            $("#convertBtn").click(calc);
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>
