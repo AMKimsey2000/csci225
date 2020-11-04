@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "utf-8">
+        <title>Loan Calculator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    </head>
+    <body style = "background-image: url(../img/Estate.jpg); background-size: cover;">
+        <nav class = "navbar navbar-expand sticky-top navbar-dark bg-dark">
+            <a class = "navbar-brand font-weight-bold" href = "#">Navigation Bar</a>
+            <div class = "collapse navbar-collapse">
+                <div class = "navbar-nav">
+                    <a class = "nav-item nav-link active" href = "../index.html">Back to main page</a>
+                    <a class = "nav-item nav-link disabled">Something about buying properties</a>
+                    <a class = "nav-item nav-link disabled">Something about selling properties</a>
+                    <a class = "nav-item nav-link disabled">Something else</a>
+                    <a class = "nav-item nav-link active" id = "calcOpen">Loan calculator</a>
+                </div>
+            </div>
+        </nav>
+        <form class = "form-group mr-5 mt-5" style = "float: right; display: none;" id = "loanForm">
+            <label class = "font-italic" style = "float: right; color: #ffffff;">Loan amount<input id = "loanAmt" class = "form-control" type = "text" required></label><br>
+            <label class = "font-italic" style = "float: right; color: #ffffff;">Annual interest rate (%)<input id = "interestRate" class = "form-control" type = "text" required></label><br>
+            <label class = "font-italic" style = "float: right; color: #ffffff;">Loan term in years<input id = "loanTime" class = "form-control" type = "text" required></label><br>
+            <label class = "font-italic" style = "float: right; color: #ffffff;">Starting year<input id = "startYear" class = "form-control" type = "text" required></label><br>
+            <button type = "button" class = "btn btn-primary" id = "calcBtn">Calculate</button>
+        </form>
+        <div id = "result"></div>
+        <script>
+            $("#calcBtn").click(function() {
+                var str = "";
+                var monthlyRate = parseFloat($("#interestRate").val()) / 1200.0;
+                var loanAmt = parseFloat($("#loanAmt").val());
+                var time = parseInt($("#loanTime").val());
+                var startYear = parseInt($("#startYear").val());
+                var monthlyPay = loanAmt * (monthlyRate) / (1 - Math.pow((1 + monthlyRate), -(time * 12.0)));
+                var check = (!isNaN(monthlyRate) && !isNaN(loanAmt) && !isNaN(time) && !isNaN(startYear))
+                if (!check) {
+                    alert("One or more of your values is empty or is not a number. Make sure your inputs are standard numbers either integers or decimals and try again.");
+                    return;
+                }
+                str += "<table class = 'ml-5 mt-5 mb-5'><tr><td colspan = '4'>Monthly rate: $ " + monthlyPay.toFixed(2) + " / mo.</td></tr><tr><td>Year</td><td style = 'background-color: #ffff0055'>Interest</td><td style = 'background-color: #00ff0055'>Principal</td><td style = 'background-color: #ff000055'>Loan balance</td></tr>";
+                for (var i = startYear; i < startYear + time; i++) {
+                    var yearInterest = 0;
+                    var yearPrincipal = 0;
+                    for (var j = 0; j < 12; j++) {
+                        var monthInterest = loanAmt * monthlyRate;
+                        var principal = monthlyPay - monthInterest;
+                        yearInterest += monthInterest;
+                        yearPrincipal += principal;
+                        loanAmt -= principal;
+                    }
+                    str += "<tr><td>" + i + "</td><td>$ " + yearInterest.toFixed(2) + "</td><td>$ " + yearPrincipal.toFixed(2) + "</td><td>$ " + loanAmt.toFixed(2) + "</td></tr>";
+                }
+                str += "</table>";
+                $("#result").html(str);
+                $("table tr td").css("color", "#ffffff");
+                $("table").css({"background-color" : "#bbbbbb44", "border" : "2px solid #000000", "width" : "30%"});
+                $("td").css("font-size", "18px");
+            })
+
+            $("#calcOpen").click(function() {
+                if ($("#loanForm").css("display") == "none") {
+                    $("#calcOpen").css("color", "#00aaff")
+                    $("#loanForm").css("display", "block");
+                } else {
+                    $("#calcOpen").css("color", "#ffffff")
+                    $("#loanForm").css("display", "none");
+                    $("#result").html("");
+                }
+            });
+        </script>
+    </body>
+</html>
